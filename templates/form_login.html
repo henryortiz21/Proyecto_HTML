@@ -1,22 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="https://www.thymeleaf.org/">
 
 <head>
 
     <meta charset="UTF-8">
-
-    <link rel="apple-touch-icon" type="image/png"
-        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-
-    <link rel="mask-icon" type=""
-        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
-        color="#111">
-
-
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+  
     <title>CodePen - Sign up and login form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -29,22 +18,18 @@
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
-            width: 750px;
-            height: 361px;
-            position: relative;
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
         }
 
         .container {
-            /*border:1px solid white;*/
             width: 600px;
             height: 350px;
+            padding: 10px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: inline-flex;
+            align-items: center;
         }
 
         .backbox {
@@ -60,7 +45,8 @@
         .frontbox {
             background-color: white;
             border-radius: 20px;
-            height: 100%;
+            height: auto;
+            min-height: 100%;
             width: 50%;
             z-index: 10;
             position: absolute;
@@ -150,7 +136,7 @@
             box-sizing: content-box;
             padding: 10px;
             border-radius: 10px;
-            width: 60px;
+            width: 80px;
             position: absolute;
             right: 30px;
             bottom: 30px;
@@ -183,8 +169,6 @@
         window.console = window.console || function (t) { };
     </script>
 
-
-
     <script>
         if (document.location.search.match(/type=embed/gi)) {
             window.parent.postMessage("resize", "*");
@@ -198,40 +182,45 @@
         <div class="backbox">
             <div class="loginMsg">
                 <div class="textcontent">
-                    <p class="title">Don't have an account?</p>
-                    <p>Sign up to save all your graph.</p>
-                    <button id="switch1">Sign Up</button>
+                    <p class="title" style="width: 90%;">NO TIENE CUENTA CON NOSOTROS?</p>
+                    <p>Registrese, es gratis!</p>
+                    <button id="switch1">REGISTRARSE</button>
                 </div>
             </div>
             <div class="signupMsg visibility">
                 <div class="textcontent">
-                    <p class="title">Have an account?</p>
-                    <p>Log in to see all your collection.</p>
-                    <button id="switch2">LOG IN</button>
+                    <p class="title">YA TIENES CUENTA?</p>
+                    <p>Inicia sesion para ver nuestra coleccion</p>
+                    <button id="switch2">CONECTARSE</button>
                 </div>
             </div>
         </div>
         <!-- backbox -->
 
         <div class="frontbox">
-            <div class="login">
-                <h2>LOG IN</h2>
+            <div class="login" style="height: 100%;">
+                <h2>INICIAR SESION</h2>
                 <div class="inputbox">
-                    <input type="text" name="email" placeholder="  EMAIL">
-                    <input type="password" name="password" placeholder="  PASSWORD">
+                    <input type="text" class="form-control" name="email" placeholder="  EMAIL">
+                    <input type="password" class="form-control" name="password" placeholder="  PASSWORD">
                 </div>
-                <p>FORGET PASSWORD?</p>
-                <button>LOG IN</button>
+                <p>OLVIDO SU CONTRASEÑA?</p>
+                <button>INICIAR</button>
             </div>
 
-            <div class="signup hide">
-                <h2>SIGN UP</h2>
+            <div class="signup hide" style="height: 500px;">
+                <h2>REGISTRARSE</h2>
                 <div class="inputbox">
-                    <input type="text" name="fullname" placeholder="  FULLNAME">
-                    <input type="text" name="email" placeholder="  EMAIL">
-                    <input type="password" name="password" placeholder="  PASSWORD">
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="NOMBRE">
+                    <input type="text" class="form-control" name="apellido1" id="apellido1"
+                        placeholder="PRIMER APELLIDO">
+                    <input type="text" class="form-control" name="apellido2" id="apellido2"
+                        placeholder="SEGUNDO APELLIDO">
+                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="TELEFONO">
+                    <input type="text" class="form-control" name="correo" id="correo" placeholder="CORREO">
+                    <input type="password" class="form-control" name="password" placeholder="  PASSWORD">
                 </div>
-                <button>SIGN UP</button>
+                <button class="btn btn-outline-dark">REGISTRARSE</button>
             </div>
 
         </div>
@@ -242,8 +231,6 @@
 
     <script
         src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-8216c69d01441f36c0ea791ae2d4469f0f8ff5326f00ae2d00e4bb7d20e24edb.js"></script>
-
-
     <script id="rendered-js">
         var $loginMsg = $('.loginMsg'),
             $login = $('.login'),
